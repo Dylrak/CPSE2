@@ -1,0 +1,4 @@
+picture (40, 40) factory.jpg
+circle (10,10) RED 5
+rectangle (20, 20) GREEN (5, 5)
+line (30, 30) BLUE (10, 10)

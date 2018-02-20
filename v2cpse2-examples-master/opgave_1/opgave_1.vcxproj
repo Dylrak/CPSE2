@@ -175,13 +175,6 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\03-08 array of actions\ball.cpp" />
-    <ClCompile Include="..\03-08 array of actions\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\03-08 array of actions\ball.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

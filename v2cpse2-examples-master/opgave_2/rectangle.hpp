@@ -1,5 +1,5 @@
-#ifndef _WALL_HPP
-#define _WALL_HPP
+#ifndef _RECTANGLE_HPP
+#define _RECTANGLE_HPP
 
 #include "drawable.hpp"
 
@@ -16,4 +16,4 @@ public:
 	sf::FloatRect getAABB() override;
 };
 
-#endif //_WALL_HPP
+#endif //_RECTANGLE_HPP

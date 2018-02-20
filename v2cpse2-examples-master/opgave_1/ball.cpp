@@ -1,29 +1,51 @@
 #include <SFML/Graphics.hpp>
 #include "ball.hpp"
 
-ball::ball( sf::Vector2f position, float size ) :
+ball::ball( sf::Vector2f position, float size, sf::Vector2f direction, sf::Color color ) :
 	position{ position },
-	size{ size }
-{}
-
-void ball::draw( sf::RenderWindow & window ) const {
-	sf::CircleShape circle;
-	circle.setRadius(size);
+	radius{ size },
+	direction{ direction },
+	color{ color },
+	circle{ sf::CircleShape() }
+{
+	circle.setRadius(radius);
 	circle.setPosition(position);
+	circle.setFillColor(color);
+}
+
+void ball::draw( sf::RenderWindow & window ) {
 	window.draw(circle);
 }
 
-void ball::move( sf::Vector2f delta ){
-	position += delta;
+sf::FloatRect ball::getAABB() {
+	return circle.getGlobalBounds();
 }
 
-void ball::jump( sf::Vector2f target ){
-	position = target;
+void ball::collide(std::vector<drawable*> objects) {
+	sf::Vector2f collisionPosition = sf::Vector2f(position.x, position.y + direction.y);
+	circle.setPosition(collisionPosition);
+	for (auto & object : objects) {
+		if (object != this && getAABB().intersects(object->getAABB())) {
+			direction = sf::Vector2f(direction.x, -direction.y);
+			break;
+		}
+	}
+	collisionPosition = sf::Vector2f(position.x + direction.x, position.y);
+	circle.setPosition(collisionPosition);
+	for (auto & object : objects) {
+		if (object != this && getAABB().intersects(object->getAABB())) {
+			direction = sf::Vector2f(-direction.x, direction.y);
+			break;
+		}
+	}
+	circle.setPosition(position);
 }
 
-void ball::jump( sf::Vector2i target ){
-	jump( sf::Vector2f( 
-		static_cast< float >( target.x ), 
-		static_cast< float >( target.y )
-	));
+void ball::move(){
+	position += direction;
+	circle.setPosition(position);
+}
+
+void ball::bounce(sf::Vector2f delta) {
+	direction = sf::Vector2f{ direction.x * delta.x, direction.y * delta.y };
 }
