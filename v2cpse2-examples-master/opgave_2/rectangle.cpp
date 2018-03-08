@@ -1,20 +1,9 @@
 #include "rectangle.hpp"
 
-rectangle::rectangle(sf::Vector2f position, sf::Vector2f size, sf::Color color) :
-	position{ position },
-	size{ size },
-	color{ color },
-	shape(sf::RectangleShape())
+rectangle::rectangle(sf::Vector2f position, sf::Color color, sf::Vector2f size) :
+	drawable { shape }
 {
-	shape.setSize(size);
 	shape.setPosition(position);
 	shape.setFillColor(color);
-}
-
-void rectangle::draw(sf::RenderWindow & window) {
-	window.draw(shape);
-}
-
-sf::FloatRect rectangle::getAABB() {
-	return shape.getGlobalBounds();
+	shape.setSize(size);
 }

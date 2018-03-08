@@ -56,7 +56,7 @@ int main( int argc, char *argv[] ){
 
 	sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window" };
 	
-	ball my_ball{ sf::Vector2f{ 320.0, 240.0 } };
+	circle my_ball{ sf::Vector2f{ 320.0, 240.0 } };
 	cube my_cube{ sf::Vector2f{ 80.0, 60.0 } };
 
 	float wall_thickness = 10.0;

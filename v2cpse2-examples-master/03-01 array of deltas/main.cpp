@@ -17,7 +17,7 @@ int main( int argc, char *argv[] ){
 	std::cout << "Starting application 01-04 array of deltas\n";
 
 	sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window" };
-	ball my_ball{ sf::Vector2f{ 320.0, 240.0 } };
+	circle my_ball{ sf::Vector2f{ 320.0, 240.0 } };
 
 	while (window.isOpen()) {
 		for (auto & action : actions) {

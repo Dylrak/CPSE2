@@ -173,17 +173,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Factory.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ball.cpp" />
+    <ClCompile Include="circle.cpp" />
+    <ClCompile Include="factory.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="drawable.cpp" />
+    <ClCompile Include="picture.cpp" />
     <ClCompile Include="rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ball.hpp" />
+    <ClInclude Include="circle.hpp" />
     <ClInclude Include="drawable.hpp" />
+    <ClInclude Include="factory.hpp" />
+    <ClInclude Include="line.hpp" />
+    <ClInclude Include="picture.hpp" />
     <ClInclude Include="rectangle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

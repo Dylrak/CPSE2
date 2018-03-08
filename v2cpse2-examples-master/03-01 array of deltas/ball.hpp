@@ -3,10 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 
-class ball {
+class circle {
 public:
 
-	ball( sf::Vector2f position, float size = 30.0 );
+	circle( sf::Vector2f position, float size = 30.0 );
 
 	void draw( sf::RenderWindow & window ) const;
 

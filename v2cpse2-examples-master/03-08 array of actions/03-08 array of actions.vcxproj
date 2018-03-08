@@ -178,7 +178,6 @@
   <ItemGroup>
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="cube.cpp" />
-    <ClCompile Include="drawable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>

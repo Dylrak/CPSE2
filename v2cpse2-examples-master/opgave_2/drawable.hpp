@@ -4,9 +4,16 @@
 
 class drawable
 {
+private:
+	static drawable* current_selection;
+	sf::Shape & shape;
+	
 public:
-	virtual void draw(sf::RenderWindow & window) = 0;
-	virtual sf::FloatRect getAABB() = 0;
+	drawable(sf::Shape & shape);
+	virtual void draw(sf::RenderWindow & window);
+	bool collides_with_mouse(sf::Vector2i &mousePos);
+	void select();
+	void set_position(sf::Vector2i &delta);
 };
 
 #endif //DRAWABLE_HPP

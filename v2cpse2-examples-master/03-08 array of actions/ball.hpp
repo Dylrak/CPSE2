@@ -3,15 +3,15 @@
 
 #include "drawable.hpp"
 
-class ball : public drawable {
+class circle : public drawable {
 private:
 	sf::Vector2f position;
 	sf::Vector2f direction;
 	sf::Color color;
 	float radius;
-	sf::CircleShape circle;
+	sf::CircleShape cs;
 public:
-	ball(sf::Vector2f position, float size = 30.0, sf::Vector2f direction = sf::Vector2f{-1.0, 1.0}, sf::Color color = sf::Color::Blue);
+	circle(sf::Vector2f position, float size = 30.0, sf::Vector2f direction = sf::Vector2f{-1.0, 1.0}, sf::Color color = sf::Color::Blue);
 
 	void draw( sf::RenderWindow & window ) override;
 	sf::FloatRect getAABB() override;
