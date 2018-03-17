@@ -1,4 +1,4 @@
-picture (40, 40) factory.jpg
-circle (10,10) RED 5
-rectangle (20, 20) GREEN (5, 5)
-line (30, 30) BLUE (10, 10)
+picture (418,265) test.png 
+circle (221,214) RED 50 
+rectangle (30,64) BLUE (100,100) 
+line (279,45) GREEN (100,300) 

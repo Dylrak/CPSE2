@@ -1,0 +1,4 @@
+picture (100,100) test.png
+circle (200,200) RED (50,50)
+rectangle (300,300) BLUE (100,100)
+line (400, 200) GREEN (100, 300)

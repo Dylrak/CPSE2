@@ -2,14 +2,18 @@
 #define _PICTURE_HPP
 
 #include "drawable.hpp"
+//#include "operators.hpp"
 
 class picture : public drawable
 {
 private:
-	sf::Texture &image;
+	static std::string name;
+	std::string path;
+	sf::Texture image;
 	sf::RectangleShape shape;
 public:
-	picture(sf::Vector2f position, sf::Texture image);
+	picture(sf::Vector2f position, std::string filename);
+	std::string print() override;
 };
 
 #endif //_PICTURE_HPP

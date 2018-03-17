@@ -10,8 +10,15 @@
 
 class factory
 {
+private:
+	std::string filename;
+	std::vector<drawable*> drawables;
+	drawable * read_drawable(std::ifstream & input);
 public:
-	factory();
+	factory(std::string filename);
+	bool read_drawables();
+	std::vector<drawable*> get_drawables();
+	void set_drawables(std::vector<drawable*> drawables);
 };
 
-#endif // !
+#endif
